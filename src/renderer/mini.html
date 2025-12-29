@@ -1,0 +1,181 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Widget Mini</title>
+  <style>
+    * {
+      margin: 0;
+      padding: 0;
+      box-sizing: border-box;
+    }
+
+    body {
+      font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+      background: transparent;
+      overflow: hidden;
+    }
+
+    .mini-container {
+      background: linear-gradient(135deg, #f5a623 0%, #e09500 100%);
+      border-radius: 6px;
+      padding: 4px 8px;
+      display: flex;
+      align-items: center;
+      gap: 8px;
+      cursor: pointer;
+      box-shadow: 0 2px 8px rgba(0, 0, 0, 0.3);
+      border: 1px solid rgba(255, 255, 255, 0.2);
+      -webkit-app-region: no-drag; /* Permite hacer clic */
+    }
+
+    .mini-container:hover {
+      background: linear-gradient(135deg, #ffb84d 0%, #f5a623 100%);
+      box-shadow: 0 3px 12px rgba(0, 0, 0, 0.4);
+    }
+
+    .indicator {
+      display: flex;
+      align-items: center;
+      gap: 3px;
+    }
+
+    .indicator-label {
+      font-size: 10px;
+      color: rgba(255, 255, 255, 0.95);
+      font-weight: 700;
+    }
+
+    .indicator-value {
+      font-size: 13px;
+      color: white;
+      font-weight: bold;
+    }
+
+    .separator {
+      width: 1px;
+      height: 20px;
+      background: rgba(255, 255, 255, 0.3);
+    }
+
+    .status-dot {
+      width: 5px;
+      height: 5px;
+      border-radius: 50%;
+    }
+
+    .drag-handle {
+      color: rgba(255, 255, 255, 0.6);
+      font-size: 12px;
+      cursor: move;
+      -webkit-app-region: drag;
+      padding: 0 2px;
+      user-select: none;
+    }
+
+    .drag-handle:hover {
+      color: rgba(255, 255, 255, 0.9);
+    }
+
+    .status-good {
+      background: #4caf50;
+      box-shadow: 0 0 4px #4caf50;
+    }
+
+    .status-warning {
+      background: #ff9800;
+      box-shadow: 0 0 4px #ff9800;
+    }
+
+    .status-bad {
+      background: #f44336;
+      box-shadow: 0 0 4px #f44336;
+    }
+  </style>
+</head>
+<body>
+  <div class="mini-container" id="miniContainer">
+    <div class="drag-handle" id="dragHandle">⋮</div>
+    <div class="indicator">
+      <div class="status-dot status-good" id="mfrStatus"></div>
+      <span class="indicator-label">MFR</span>
+      <span class="indicator-value" id="mfrValue">--</span>
+    </div>
+    <div class="separator"></div>
+    <div class="indicator">
+      <div class="status-dot status-warning" id="teStatus"></div>
+      <span class="indicator-label">TE</span>
+      <span class="indicator-value" id="teValue">--</span>
+    </div>
+  </div>
+
+  <script>
+    const { ipcRenderer } = require('electron');
+
+    let hoverTimeout = null;
+    let isExpanded = false;
+
+    // Cargar datos
+    async function loadData() {
+      try {
+        const data = await ipcRenderer.invoke('get-data');
+
+        document.getElementById('mfrValue').textContent = data.mfr.value.toFixed(1);
+        document.getElementById('teValue').textContent = data.te.value.toFixed(1);
+
+        // Actualizar indicadores de estado
+        updateStatus('mfrStatus', data.mfr.value, 85, 90);
+        updateStatus('teStatus', data.te.value, 70, 85);
+      } catch (error) {
+        console.error('Error cargando datos:', error);
+      }
+    }
+
+    function updateStatus(elementId, value, warningThreshold, goodThreshold) {
+      const element = document.getElementById(elementId);
+      element.classList.remove('status-good', 'status-warning', 'status-bad');
+
+      if (value >= goodThreshold) {
+        element.classList.add('status-good');
+      } else if (value >= warningThreshold) {
+        element.classList.add('status-warning');
+      } else {
+        element.classList.add('status-bad');
+      }
+    }
+
+    // Mostrar ventana expandida al hacer CLIC
+    document.getElementById('miniContainer').addEventListener('click', () => {
+      ipcRenderer.invoke('show-expanded');
+      isExpanded = true;
+    });
+
+    // También al pasar el mouse (opcional, con delay)
+    document.getElementById('miniContainer').addEventListener('mouseenter', () => {
+      hoverTimeout = setTimeout(() => {
+        ipcRenderer.invoke('show-expanded');
+        isExpanded = true;
+      }, 500); // Delay de 500ms
+    });
+
+    document.getElementById('miniContainer').addEventListener('mouseleave', () => {
+      if (hoverTimeout) {
+        clearTimeout(hoverTimeout);
+        hoverTimeout = null;
+      }
+    });
+
+    // Escuchar evento de recarga
+    ipcRenderer.on('reload-data', () => {
+      loadData();
+    });
+
+    // Cargar datos al iniciar
+    loadData();
+
+    // Recargar datos cada 60 segundos
+    setInterval(loadData, 60000);
+  </script>
+</body>
+</html>

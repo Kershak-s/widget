@@ -1,0 +1,47 @@
+{
+  "name": "widget-produccion",
+  "version": "1.0.0",
+  "description": "Widget de indicadores de producción para Windows System Tray",
+  "main": "src/main/main.js",
+  "scripts": {
+    "start": "npx electron .",
+    "build": "npx electron-builder",
+    "build:win": "npx electron-builder --win"
+  },
+  "keywords": [
+    "widget",
+    "tray",
+    "production",
+    "kpi"
+  ],
+  "author": "",
+  "license": "ISC",
+  "type": "commonjs",
+  "devDependencies": {
+    "electron": "^39.2.6",
+    "electron-builder": "^26.0.12",
+    "icon-gen": "^5.0.0",
+    "jimp": "^1.6.0",
+    "png-to-ico": "^3.0.1"
+  },
+  "dependencies": {
+    "react": "^19.2.3",
+    "react-dom": "^19.2.3",
+    "xlsx": "^0.18.5"
+  },
+  "build": {
+    "appId": "com.produccion.widget",
+    "productName": "Widget Producción",
+    "directories": {
+      "output": "dist"
+    },
+    "win": {
+      "target": "nsis",
+      "icon": "assets/icon.ico"
+    },
+    "nsis": {
+      "oneClick": false,
+      "allowToChangeInstallationDirectory": true
+    }
+  }
+}
