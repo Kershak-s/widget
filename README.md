@@ -1,182 +1,568 @@
-# Widget Produccion
+<p align="center">
+  <img src="https://img.shields.io/badge/version-1.0.0-blue?style=for-the-badge&logo=semantic-release" alt="Version"/>
+  <img src="https://img.shields.io/badge/electron-39.2.6-47848F?style=for-the-badge&logo=electron&logoColor=white" alt="Electron"/>
+  <img src="https://img.shields.io/badge/node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white" alt="Node.js"/>
+  <img src="https://img.shields.io/badge/platform-windows-0078D6?style=for-the-badge&logo=windows&logoColor=white" alt="Windows"/>
+  <img src="https://img.shields.io/badge/license-ISC-purple?style=for-the-badge" alt="License"/>
+</p>
 
-<div align="center">
+<br/>
 
-![Widget Produccion Logo](assets/icon.png)
+<h1 align="center">
+  <br/>
+  📊
+  <br/><br/>
+  <b>Widget Produccion</b>
+  <br/>
+  <sub>Desktop Widget para Monitoreo de KPIs en Tiempo Real</sub>
+</h1>
 
-### Widget de Indicadores de Produccion para Windows
+<br/>
 
-[![Electron](https://img.shields.io/badge/Electron-39.2.6-47848F?style=for-the-badge&logo=electron&logoColor=white)](https://www.electronjs.org/)
-[![Node.js](https://img.shields.io/badge/Node.js-18+-339933?style=for-the-badge&logo=node.js&logoColor=white)](https://nodejs.org/)
-[![License](https://img.shields.io/badge/License-ISC-blue?style=for-the-badge)](LICENSE)
-[![Platform](https://img.shields.io/badge/Platform-Windows-0078D6?style=for-the-badge&logo=windows&logoColor=white)](https://www.microsoft.com/windows)
+<p align="center">
+  <b>🖥️ System Tray | 📈 MFR% & TE% | 🔄 Auto-Refresh | 📁 Excel Data</b>
+</p>
 
-*Monitorea tus KPIs de produccion en tiempo real desde el escritorio*
+<br/>
 
 ---
 
-</div>
+<br/>
 
-## Descripcion
+## 🌟 **Vista General**
 
-**Widget Produccion** es una aplicacion de escritorio para Windows que muestra indicadores clave de rendimiento (KPIs) de produccion directamente en tu pantalla. El widget permanece siempre visible y te permite monitorear en tiempo real los valores de **MFR%** (Manufacturing First Run) y **TE%** (Technical Efficiency) de tus lineas de produccion.
+**Widget Produccion** es una aplicacion de escritorio ligera para Windows que muestra indicadores clave de produccion (KPIs) directamente en tu pantalla. Diseñado para mantenerse siempre visible, permite monitorear el rendimiento de las lineas de produccion sin interrumpir tu flujo de trabajo.
 
-### Caracteristicas Principales
+<br/>
 
-- **Widget flotante** - Siempre visible en pantalla, no interfiere con tu trabajo
-- **Panel expandible** - Click para ver detalles completos de todas las lineas
-- **Lectura de Excel** - Importa datos desde archivos `.xlsx` automaticamente
-- **Indicadores visuales** - Semaforos de colores para estado rapido (verde/amarillo/rojo)
-- **Arrastrable** - Posiciona el widget donde prefieras
-- **Comparativas** - Visualiza diferencias vs semana y mes anterior
-- **System Tray** - Acceso rapido desde la bandeja del sistema
-- **Actualizacion automatica** - Los datos se refrescan cada 60 segundos
+<table>
+<tr>
+<td width="50%">
 
-## Capturas de Pantalla
+### 📈 **Indicadores Principales**
 
-### Widget Mini (Siempre Visible)
+| KPI | Descripcion |
+|-----|-------------|
+| 📊 **MFR%** | Manufacturing Rate |
+| ⚡ **TE%** | Time Efficiency |
+| 📉 **Comparativas** | Semanal y Mensual |
+| 🏭 **Por Linea** | Desglose detallado |
+
+</td>
+<td width="50%">
+
+### 🎯 **Caracteristicas Clave**
+
+| Feature | Estado |
+|---------|--------|
+| 🔝 Always On Top | ✅ Activo |
+| 🖱️ Draggable | ✅ Activo |
+| 📁 Excel Input | ✅ Activo |
+| 🔄 Auto-Refresh | ✅ 60s |
+
+</td>
+</tr>
+</table>
+
+<br/>
+
+---
+
+<br/>
+
+## 🚀 **Caracteristicas Principales**
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="25%">
+<br/>
+<h3>🔲</h3>
+<b>Mini Widget</b>
+<br/><br/>
+<sub>Barra compacta flotante<br/>Siempre visible<br/>Arrastrable</sub>
+<br/><br/>
+</td>
+<td align="center" width="25%">
+<br/>
+<h3>📊</h3>
+<b>Panel Expandido</b>
+<br/><br/>
+<sub>Vista detallada<br/>Gauges animados<br/>Lista de lineas</sub>
+<br/><br/>
+</td>
+<td align="center" width="25%">
+<br/>
+<h3>📁</h3>
+<b>Datos Excel</b>
+<br/><br/>
+<sub>Lectura automatica<br/>Formato flexible<br/>Actualizacion en vivo</sub>
+<br/><br/>
+</td>
+<td align="center" width="25%">
+<br/>
+<h3>🎨</h3>
+<b>Indicadores LED</b>
+<br/><br/>
+<sub>Verde: Optimo<br/>Amarillo: Alerta<br/>Rojo: Critico</sub>
+<br/><br/>
+</td>
+</tr>
+</table>
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="25%">
+<br/>
+<h3>🖥️</h3>
+<b>System Tray</b>
+<br/><br/>
+<sub>Icono en bandeja<br/>Menu contextual<br/>Control rapido</sub>
+<br/><br/>
+</td>
+<td align="center" width="25%">
+<br/>
+<h3>💾</h3>
+<b>Persistencia</b>
+<br/><br/>
+<sub>Guarda posicion<br/>Configuracion JSON<br/>Recuerda estado</sub>
+<br/><br/>
+</td>
+<td align="center" width="25%">
+<br/>
+<h3>🔄</h3>
+<b>Auto-Refresh</b>
+<br/><br/>
+<sub>Cada 60 segundos<br/>Recarga manual<br/>Timestamp visible</sub>
+<br/><br/>
+</td>
+<td align="center" width="25%">
+<br/>
+<h3>📦</h3>
+<b>Instalador</b>
+<br/><br/>
+<sub>NSIS Installer<br/>Portable option<br/>Auto-update ready</sub>
+<br/><br/>
+</td>
+</tr>
+</table>
+
+<br/>
+
+---
+
+<br/>
+
+## 🏗️ **Arquitectura del Sistema**
+
 ```
-+---------------------------+
-| :: | MFR 90.0 | TE 85.0  |
-+---------------------------+
-```
-El widget compacto muestra los valores actuales con indicadores de estado por colores.
-
-### Panel Expandido
-Al hacer click en el widget mini, se despliega el panel completo con:
-- Graficos tipo gauge para MFR% y TE%
-- Lista de las 5 lineas con menor rendimiento
-- Comparativas semanales y mensuales
-
-## Instalacion
-
-### Pre-requisitos
-- Node.js 18 o superior
-- npm o yarn
-- Windows 10/11
-
-### Pasos
-
-1. **Clonar el repositorio**
-   ```bash
-   git clone https://github.com/TU_USUARIO/widget-produccion.git
-   cd widget-produccion
-   ```
-
-2. **Instalar dependencias**
-   ```bash
-   npm install
-   ```
-
-3. **Ejecutar en modo desarrollo**
-   ```bash
-   npm start
-   ```
-
-4. **Compilar para produccion**
-   ```bash
-   npm run build:win
-   ```
-   El instalador se generara en la carpeta `dist/`
-
-## Configuracion de Datos
-
-El widget lee los datos desde un archivo Excel ubicado en:
-```
-data/datos_produccion.xlsx
+┌─────────────────────────────────────────────────────────────────┐
+│                     🖥️ WIDGET PRODUCCION                        │
+├─────────────────────────────────────────────────────────────────┤
+│                                                                 │
+│   ┌─────────────────┐         ┌─────────────────────────────┐  │
+│   │  📊 Mini Widget │ ──────▶ │    📈 Panel Expandido       │  │
+│   │   (Always Top)  │  hover  │   - Gauges SVG              │  │
+│   │   MFR% | TE%    │  click  │   - Lista de Lineas         │  │
+│   └─────────────────┘         │   - Comparativas            │  │
+│           │                   └─────────────────────────────┘  │
+│           │                                                     │
+├───────────┼─────────────────────────────────────────────────────┤
+│           │           ⚙️ ELECTRON MAIN PROCESS                  │
+│           │                                                     │
+│   ┌───────┴───────┐   ┌─────────────┐   ┌─────────────────┐   │
+│   │   IPC Bridge  │   │  Tray Icon  │   │  Config Manager │   │
+│   │   (Renderer)  │   │   (Menu)    │   │    (JSON)       │   │
+│   └───────────────┘   └─────────────┘   └─────────────────┘   │
+│                                                                 │
+├─────────────────────────────────────────────────────────────────┤
+│                      📁 DATA LAYER                              │
+│   ┌─────────────────────────────────────────────────────────┐  │
+│   │                    Excel Reader (XLSX)                   │  │
+│   │           datos_produccion.xlsx ──▶ JSON Data           │  │
+│   └─────────────────────────────────────────────────────────┘  │
+└─────────────────────────────────────────────────────────────────┘
 ```
 
-### Formato del Excel
+<br/>
 
-| Tipo | Linea | Valor | MFR | TE | DifSemana | DifMes |
-|------|-------|-------|-----|----|-----------| -------|
-| MFR | B1(Dorito 1500) | 79.7 | 90.0 | 85.0 | -3.2 | -13.7 |
-| MFR | B2(Dorito 2000) | 80.0 | | | | |
-| TE | C3(Frito 3000) | 9.99 | | | | |
+---
 
-## Estructura del Proyecto
+<br/>
+
+## 🚦 **Sistema de Semaforos**
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="33%">
+<br/>
+<h3>🟢</h3>
+<b>OPTIMO</b>
+<br/><br/>
+<sub>MFR ≥ 90%<br/>TE ≥ 85%</sub>
+<br/><br/>
+</td>
+<td align="center" width="33%">
+<br/>
+<h3>🟡</h3>
+<b>ALERTA</b>
+<br/><br/>
+<sub>MFR ≥ 85%<br/>TE ≥ 70%</sub>
+<br/><br/>
+</td>
+<td align="center" width="33%">
+<br/>
+<h3>🔴</h3>
+<b>CRITICO</b>
+<br/><br/>
+<sub>MFR < 85%<br/>TE < 70%</sub>
+<br/><br/>
+</td>
+</tr>
+</table>
+
+<br/>
+
+---
+
+<br/>
+
+## 📦 **Estructura del Proyecto**
 
 ```
 widget-produccion/
-├── assets/
-│   ├── icon.ico          # Icono de la aplicacion
-│   └── icon.png          # Icono PNG
-├── data/
-│   ├── config.json       # Configuracion de posicion
-│   └── datos_produccion.xlsx  # Datos de produccion
-├── src/
-│   ├── main/
-│   │   └── main.js       # Proceso principal de Electron
-│   └── renderer/
-│       ├── index.html    # Panel expandido
-│       └── mini.html     # Widget flotante
-├── package.json
-└── README.md
+│
+├── 📄 package.json              # Configuracion del proyecto
+├── 📄 create-icon.js            # Generador de iconos
+│
+├── 📂 src/
+│   ├── 📂 main/
+│   │   └── 📄 main.js           # Proceso principal Electron
+│   │
+│   └── 📂 renderer/
+│       ├── 📄 index.html        # Panel expandido (detalle)
+│       └── 📄 mini.html         # Widget mini (barra flotante)
+│
+├── 📂 data/
+│   ├── 📄 datos_produccion.xlsx # Datos de entrada
+│   └── 📄 config.json           # Configuracion persistente
+│
+├── 📂 assets/
+│   ├── 🖼️ icon.png              # Icono PNG
+│   └── 🖼️ icon.ico              # Icono Windows
+│
+└── 📂 dist/                     # Build de produccion
+    └── 📦 Widget Produccion Setup.exe
 ```
 
-## Tecnologias Utilizadas
-
-| Tecnologia | Proposito |
-|------------|-----------|
-| **Electron** | Framework para aplicaciones de escritorio |
-| **Node.js** | Runtime de JavaScript |
-| **xlsx** | Lectura de archivos Excel |
-| **electron-builder** | Empaquetado y distribucion |
-
-## Uso
-
-1. **Iniciar el widget** - Ejecuta la aplicacion, aparecera un widget compacto en la esquina inferior derecha
-2. **Mover el widget** - Arrastra desde el icono `::`  para reposicionar
-3. **Ver detalles** - Haz click o mantén el cursor sobre el widget para expandir
-4. **Menu de opciones** - Click derecho en el icono de la bandeja del sistema para:
-   - Mostrar/Ocultar widget
-   - Recargar datos manualmente
-   - Cerrar aplicacion
-
-## Indicadores de Estado
-
-| Color | MFR% | TE% |
-|-------|------|-----|
-| Verde | >= 90% | >= 85% |
-| Amarillo | >= 85% | >= 70% |
-| Rojo | < 85% | < 70% |
-
-## Desarrollo
-
-```bash
-# Instalar dependencias de desarrollo
-npm install
-
-# Ejecutar en modo desarrollo
-npm start
-
-# Generar iconos
-node create-icon.js
-
-# Compilar para Windows
-npm run build:win
-```
-
-## Contribuir
-
-Las contribuciones son bienvenidas. Por favor:
-
-1. Haz fork del proyecto
-2. Crea una rama para tu feature (`git checkout -b feature/nueva-funcionalidad`)
-3. Commit tus cambios (`git commit -m 'Agrega nueva funcionalidad'`)
-4. Push a la rama (`git push origin feature/nueva-funcionalidad`)
-5. Abre un Pull Request
-
-## Licencia
-
-Este proyecto esta bajo la Licencia ISC. Ver el archivo [LICENSE](LICENSE) para mas detalles.
+<br/>
 
 ---
 
-<div align="center">
+<br/>
 
-**Desarrollado con Electron**
+## 🛠️ **Instalacion**
 
-*Widget de monitoreo de KPIs de produccion industrial*
+<br/>
 
-</div>
+### **Requisitos Previos**
+
+```bash
+Node.js 18+
+npm (gestor de paquetes)
+Windows 10/11
+```
+
+<br/>
+
+### **Paso 1: Clonar el Repositorio**
+
+```bash
+git clone https://github.com/Kershak-s/widget.git
+cd widget
+```
+
+<br/>
+
+### **Paso 2: Instalar Dependencias**
+
+```bash
+npm install
+```
+
+<br/>
+
+### **Paso 3: Ejecutar en Desarrollo**
+
+```bash
+npm start
+```
+
+<br/>
+
+### **Paso 4: Compilar para Produccion**
+
+```bash
+# Crear instalador Windows
+npm run build:win
+```
+
+El instalador se generara en `dist/Widget Produccion Setup.exe`
+
+<br/>
+
+---
+
+<br/>
+
+## 📊 **Formato de Datos Excel**
+
+El widget lee datos desde `data/datos_produccion.xlsx`:
+
+<br/>
+
+| Columna | Tipo | Descripcion |
+|---------|------|-------------|
+| Tipo | String | "MFR" o "TE" |
+| Linea | String | Nombre de la linea (ej: "B1(Dorito 1500)") |
+| Valor | Number | Porcentaje del KPI |
+| MFR | Number | Valor general MFR% |
+| TE | Number | Valor general TE% |
+| DifSemana | Number | Diferencia vs semana anterior |
+| DifMes | Number | Diferencia vs mes anterior |
+
+<br/>
+
+### **Ejemplo de Estructura:**
+
+| Tipo | Linea           | Valor | MFR  | TE   | DifSemana | DifMes |
+|------|-----------------|-------|------|------|-----------|--------|
+| MFR  | B1(Dorito 1500) | 79.7  | 90.0 | 85.0 | -3.2      | -13.7  |
+| MFR  | B2(Dorito 2000) | 80.0  |      |      |           |        |
+| TE   | C3(Frito 3000)  | 9.99  |      |      |           |        |
+
+<br/>
+
+---
+
+<br/>
+
+## 📊 **Stack Tecnologico**
+
+<br/>
+
+<table>
+<tr>
+<td align="center" width="20%">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/electron/electron-original.svg" width="50"/>
+<br/><b>Electron</b>
+<br/><sub>39.2.6</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/nodejs/nodejs-original.svg" width="50"/>
+<br/><b>Node.js</b>
+<br/><sub>18+</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/javascript/javascript-original.svg" width="50"/>
+<br/><b>JavaScript</b>
+<br/><sub>ES6+</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/html5/html5-original.svg" width="50"/>
+<br/><b>HTML5</b>
+<br/><sub>Renderer</sub>
+</td>
+<td align="center" width="20%">
+<img src="https://cdn.jsdelivr.net/gh/devicons/devicon/icons/css3/css3-original.svg" width="50"/>
+<br/><b>CSS3</b>
+<br/><sub>Styles</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+### **Dependencias Principales**
+
+| Paquete | Version | Proposito |
+|---------|---------|-----------|
+| electron | 39.2.6 | Framework desktop |
+| electron-builder | 26.0.12 | Empaquetador/Instalador |
+| xlsx | 0.18.5 | Lectura de archivos Excel |
+| react | 19.2.3 | UI Components (futuro) |
+| jimp | 1.6.0 | Procesamiento de imagenes |
+| icon-gen | 5.0.0 | Generacion de iconos |
+
+<br/>
+
+---
+
+<br/>
+
+## 🎨 **Interfaz de Usuario**
+
+<br/>
+
+### **Mini Widget (Barra Flotante)**
+
+```
+┌──────────────────────────────────┐
+│ ⋮  🟢 MFR 90.0 │ 🟡 TE 85.0    │
+└──────────────────────────────────┘
+```
+
+- **Siempre visible** sobre otras ventanas
+- **Arrastrable** a cualquier posicion
+- **Indicadores LED** de estado por colores
+- **Hover/Click** expande el panel detallado
+
+<br/>
+
+### **Panel Expandido**
+
+```
+┌─────────────────────────────────────┐
+│  Indicadores de Produccion      ✕  │
+├─────────────────────────────────────┤
+│  ┌───────────┐  ┌───────────┐      │
+│  │  MFR%     │  │   TE%     │      │
+│  │   ◠◡◠     │  │   ◠◡◠     │      │
+│  │  90.0%    │  │  85.0%    │      │
+│  ├───────────┤  ├───────────┤      │
+│  │ B1 79.7%  │  │ C3 9.99%  │      │
+│  │ B2 80.0%  │  │ D2 40.86% │      │
+│  │ A3 80.5%  │  │ D1 47.96% │      │
+│  └───────────┘  └───────────┘      │
+├─────────────────────────────────────┤
+│  MFR% Comparativas                  │
+│  ┌─────────────┐ ┌─────────────┐   │
+│  │ Sem: ↓3.2% │ │ Mes: ↓13.7%│   │
+│  └─────────────┘ └─────────────┘   │
+├─────────────────────────────────────┤
+│  TE% Comparativas                   │
+│  ┌─────────────┐ ┌─────────────┐   │
+│  │ Sem: ↓3.2% │ │ Mes: ↓13.7%│   │
+│  └─────────────┘ └─────────────┘   │
+├─────────────────────────────────────┤
+│      Ultima actualizacion: 12:30   │
+└─────────────────────────────────────┘
+```
+
+<br/>
+
+---
+
+<br/>
+
+## ⚙️ **Configuracion**
+
+El widget guarda su configuracion en `data/config.json`:
+
+```json
+{
+  "x": 1680,
+  "y": 1018
+}
+```
+
+| Propiedad | Descripcion |
+|-----------|-------------|
+| x | Posicion horizontal del widget |
+| y | Posicion vertical del widget |
+
+<br/>
+
+---
+
+<br/>
+
+## 🖱️ **Uso**
+
+<br/>
+
+| Accion | Resultado |
+|--------|-----------|
+| **Click** en mini widget | Abre panel expandido |
+| **Hover** 500ms | Abre panel expandido |
+| **Arrastrar** con ⋮ | Mueve el widget |
+| **Click derecho** en tray | Menu contextual |
+| **Click ✕** en panel | Cierra panel expandido |
+
+<br/>
+
+### **Menu del System Tray**
+
+- 👁️ **Mostrar Widget** - Hace visible el mini widget
+- 🙈 **Ocultar Widget** - Oculta el mini widget
+- 🔄 **Recargar Datos** - Actualiza desde Excel
+- ❌ **Salir** - Cierra la aplicacion
+
+<br/>
+
+---
+
+<br/>
+
+## 🤝 **Contribuir**
+
+Las contribuciones son bienvenidas. Por favor:
+
+1. Fork el proyecto
+2. Crea una rama (`git checkout -b feature/NuevaCaracteristica`)
+3. Commit tus cambios (`git commit -m 'Add: nueva caracteristica'`)
+4. Push a la rama (`git push origin feature/NuevaCaracteristica`)
+5. Abre un Pull Request
+
+<br/>
+
+---
+
+<br/>
+
+## 📞 **Soporte**
+
+<br/>
+
+<table>
+<tr>
+<td align="center">
+<h3>📧</h3>
+<b>Email</b>
+<br/>
+<sub>soporte@widget.mx</sub>
+</td>
+<td align="center">
+<h3>🐛</h3>
+<b>Issues</b>
+<br/>
+<sub>GitHub Issues</sub>
+</td>
+<td align="center">
+<h3>📖</h3>
+<b>Docs</b>
+<br/>
+<sub>Wiki del proyecto</sub>
+</td>
+</tr>
+</table>
+
+<br/>
+
+---
+
+<br/>
+
+<p align="center">
+  <b>Desarrollado con ❤️ para Monitoreo de Produccion Industrial</b>
+  <br/><br/>
+  <img src="https://img.shields.io/badge/Made%20with-Electron-47848F.svg?style=flat-square&logo=electron" alt="Made with Electron"/>
+  <img src="https://img.shields.io/badge/Powered%20by-Node.js-339933.svg?style=flat-square&logo=node.js" alt="Powered by Node.js"/>
+  <br/><br/>
+  <sub>© 2024 Widget Produccion - Todos los derechos reservados</sub>
+</p>
